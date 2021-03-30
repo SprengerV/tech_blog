@@ -20,9 +20,18 @@ header {
 .article-body {
     padding: 0px 10px 0px 10px;
 }
+.article-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .article-title {
     margin: 0;
     padding: .5rem .5rem .5rem 0px
+}
+.form-row {
+    display: flex;
+    flex-direction: column;
 }
 .navbar {
     height: 62px;
@@ -34,10 +43,44 @@ header {
 .navbar-brand {
     font-size: 40px;
     margin: .5rem;
-    /* padding: .5rem; */
 }
 .nav-link {
     text-decoration: none;
     color: white;
     padding: 10px;
+}
+.sign-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.sign-box {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    width: 50vw;
+    height: 65vh;
+    background-color: white;
+    border-color: darkslategray;
+    border-width: 2px;
+    border-style: inset;
+}
+.sign-form {
+    display: flex;
+    flex-direction: column;
+    width: 62%;
+    height: 400px;
+    /* align-items: baseline; */
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
+}
+.sign-header {
+
+}
+.sign-title {
+    padding: 1rem 0 1rem 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }

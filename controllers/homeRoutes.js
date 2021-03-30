@@ -6,5 +6,8 @@ router.get('/home', (req, res) => {
 router.get('/', (req, res) => {
     res.render('recent')
 })
+router.get('/signup', (req,res) => {
+    res.render('signup')
+})
 
 module.exports = router;
