@@ -5,6 +5,7 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 
+const models = require('./models');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -38,4 +39,5 @@ sequelize
     .sync({ force: false, logging: console.log })
     .then(() => {
         app.listen(PORT, () => console.log(`LISTENING ON PORT ${PORT}`));
-    });
+    })
+    .catch((err) => console.log(err));

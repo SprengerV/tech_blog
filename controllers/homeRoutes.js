@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-router.get('home', (req, res) => {
+router.get('/home', (req, res) => {
     res.status(200).json({ message: 'welcome home (sanitarium)' })
 })
 
