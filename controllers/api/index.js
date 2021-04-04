@@ -1,9 +1,8 @@
 const router = require('express').Router();
 const authRoutes = require('./authRoutes');
+const postRoutes = require('./postRoutes');
 
-router.get('/', (req, res) => {
-    res.status(200).json({ message: 'w00tis' })
-});
 router.use('/auth', authRoutes);
+router.use('post', postRoutes);
 
 module.exports = router;

@@ -30,7 +30,7 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [24, 255]
+                len: [8, 255]
             }
         }
     },
