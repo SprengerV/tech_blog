@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
 const User = require('./User');
 const Post = require('./Post')
@@ -34,6 +34,11 @@ Comment.init(
             validate: {
                 len: [1, 144]
             }
+        },
+        createdAt: {
+            type: Sequelize.DATE,
+            allowNull: false,
+            defaultValue: Sequelize.NOW
         }
     },
     {

@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
+const { sequelize } = require('../models/User');
+const { trimTime } = require('../utils/helpers');
 
 router.get('/home', (req, res) => {
     res.status(200).json({ message: 'welcome home (sanitarium)' })
@@ -7,20 +9,34 @@ router.get('/home', (req, res) => {
 router.get('/', (req, res) => {
     Post.findAll(
         {
-            raw: true,
-            include: [User, Comment]        
+            limit: 25,
+            include: [
+                {
+                    model: User,
+                    attributes: ['userName']
+                },
+                {
+                    model: Comment,
+                    attributes: ['body', 'id'],
+                    include: [
+                        {
+                            model: User,
+                            attributes: ['userName']
+                        }
+                    ]
+                }
+            ],
+            order: [
+                ['createdAt', 'DESC']        
+            ]
         }
     )
-    .then((posts) => {
-        console.log(posts)
-        if (req.session.loggedIn) {
-            res.render('recent', { posts, logged_in: true })
-            // res.send(posts)
-        } else {
-            res.render('recent', { posts })
-            // res.send(posts)
-        }
+    .then((postData) => {
+        console.log(postData)
+        const posts = postData.map(post => post.get({ plain: true }));
+        res.render('recent', { posts, logged_in: req.session.loggedIn })
     })
+    .catch(err => console.error(err))
 });
 router.get('/signup', (req,res) => {
     res.render('signup')

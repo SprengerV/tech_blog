@@ -1,6 +1,7 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
 const User = require('./User');
+const moment = require('moment')
 
 class Post extends Model {}
 
@@ -32,6 +33,11 @@ Post.init(
             validate: {
                 len: [8, 255]
             }
+        },
+        createdAt: {
+            type: Sequelize.DATE,
+            allowNull: false,
+            defaultValue: Sequelize.NOW
         }
     },
     {
