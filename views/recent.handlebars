@@ -1,5 +1,4 @@
 {{#if logged_in}}
-
 <div id="newPostArea">
     <a class="newPostBtn" href="/post/new"> 
         <p id="newPostBtn">Add A Post</p>
@@ -10,24 +9,7 @@
 
 {{#each posts as |post| }}
 <article>
-    <header class="article-header">
-        <h2 class="article-title">{{{post.title}}}</h2>
-        <p class="date">{{{post.createdAt}}}</p>
-    </header>
-    <span class="author">{{{post.user.userName}}} wrote:</span>
-    <p class="article-body">
-        {{{post.body}}}
-    </p>
-   
-    <a class="commentBar" href="/post/{{{post.id}}}">
-        <aside class="commentCount">
-            {{#if post.comments}}
-            <span class="commentCount">{{{post.comments.length}}} Comments</span>
-            {{else}}
-            <span class="commentCount">Add A Comment</span>
-            {{/if}}
-        </aside>
-    </a>
+    {{>truncPost post}}
 </article>
 
 {{/each}}

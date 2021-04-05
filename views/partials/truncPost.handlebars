@@ -1,0 +1,18 @@
+<header class="article-header">
+    <h2 class="article-title">{{{title}}}</h2>
+    <p class="date">{{{createdAt}}}</p>
+</header>
+<span class="author">{{{user.userName}}} wrote:</span>
+<p class="truncArticleBody">
+    {{{body}}}
+</p>
+
+<a class="commentBar" href="/post/{{{id}}}">
+    <aside class="commentCount">
+        {{#if comments}}
+        <span class="commentCount">{{{comments.length}}} Comments</span>
+        {{else}}
+        <span class="commentCount">Add A Comment</span>
+        {{/if}}
+    </aside>
+</a>
