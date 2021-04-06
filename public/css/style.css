@@ -134,6 +134,11 @@ header {
     text-overflow: ellipsis;
     -webkit-line-clamp: 4;
 }
+#addComment {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
 #addPost {
     margin: 7vh auto 7vh auto;
     width: 67vw;
@@ -143,6 +148,17 @@ header {
     justify-content: space-around;
     align-items: center;
     background-color: white;
+}
+#commentBox {
+    margin: 10vh auto 10vh auto;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+}
+#newComment {
+    margin: 0 auto 10px auto;
+    width: 500px;
+    height: 4em;
 }
 #newPostArea {
     width: 70vw;

@@ -2,6 +2,19 @@
     {{>singlePost post}}
 </article>
 
+<div id="commentBox">
+    <form data-postId="{{{post.id}}}" type="submit" id="addComment">
+        <div class="formRow">
+            <input id="newComment">
+        </div>
+        <div class="formRow">
+            <button type="submit" id="submitComment">Add A Comment</button>
+        </div>
+    </form>
+</div>
+
+<script src="/js/comment.js"></script>
+
 {{#each post.comments as |comment|}}
     {{>comment comment}}
 {{/each}}

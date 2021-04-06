@@ -23,8 +23,7 @@ router.get('/:id', withAuth, (req, res) => {
                                 model: User,
                                 attributes: ['userName']
                             }
-                        ],
-                        order: [['DESC', 'createdAt']]
+                        ]
                     }
                 ],
             }
