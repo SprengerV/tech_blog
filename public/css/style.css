@@ -134,6 +134,16 @@ header {
     text-overflow: ellipsis;
     -webkit-line-clamp: 4;
 }
+#addPost {
+    margin: 7vh auto 7vh auto;
+    width: 67vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+}
 #newPostArea {
     width: 70vw;
     height: 1.3ex;
@@ -161,4 +171,7 @@ header {
     text-decoration: solid;
     color: darkgray;
     font-variant: small-caps;
+}
+#submitPost {
+
 }

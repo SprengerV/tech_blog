@@ -3,8 +3,8 @@ const withAuth = require('../utils/auth.js');
 const { User, Post, Comment } = require('../models');
 
 // routes for /post
-router.get('/new', withAuth, (req, res) => {
-
+router.get('/add', withAuth, (req, res) => {
+    res.render('addPost', { logged_in: req.session.loggedIn })
 });
 router.get('/:id', withAuth, (req, res) => {
     Post
@@ -23,15 +23,17 @@ router.get('/:id', withAuth, (req, res) => {
                                 model: User,
                                 attributes: ['userName']
                             }
-                        ]
+                        ],
+                        order: [['DESC', 'createdAt']]
                     }
-                ]
+                ],
             }
         )
         .then((postData) => {
             const post = postData.get({ plain: true });
             res.render('post', { post, logged_in: req.session.loggedIn });
         })
+        .catch(err => console.error(err))
 });
 
 module.exports = router;
