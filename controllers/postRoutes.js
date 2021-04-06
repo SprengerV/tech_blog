@@ -2,7 +2,7 @@ const router = require('express').Router();
 const withAuth = require('../utils/auth.js');
 const { User, Post, Comment } = require('../models');
 
-// routes for /post/
+// routes for /post
 router.get('/new', withAuth, (req, res) => {
 
 });
@@ -30,7 +30,7 @@ router.get('/:id', withAuth, (req, res) => {
         )
         .then((postData) => {
             const post = postData.get({ plain: true });
-            res.send(post);
+            res.render('post', { post, logged_in: req.session.loggedIn });
         })
 });
 

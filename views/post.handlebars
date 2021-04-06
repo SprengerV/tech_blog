@@ -1,1 +1,7 @@
-{{>singlePost post}}
+<article>
+    {{>singlePost post}}
+</article>
+
+{{#each post.comments as |comment|}}
+    {{>comment comment}}
+{{/each}}
