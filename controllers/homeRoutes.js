@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 const { trimTime } = require('../utils/helpers');
-const withAuth = require('../utils/auth');
+const { loggedIn } = require('../utils/auth');
 
 router.get('/home', (req, res) => {
     res.status(200).json({ message: 'welcome home (sanitarium)' })
@@ -38,7 +38,7 @@ router.get('/', (req, res) => {
     })
     .catch(err => console.error(err))
 });
-router.get('/dashboard', withAuth, (req, res) => {
+router.get('/dashboard', loggedIn, (req, res) => {
     const userId = req.session.userId;
     console.log(`USER ID: ${userId}`)
     Post
