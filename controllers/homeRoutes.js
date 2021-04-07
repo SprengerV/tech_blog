@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
-const { sequelize } = require('../models/User');
 const { trimTime } = require('../utils/helpers');
+const withAuth = require('../utils/auth');
 
 router.get('/home', (req, res) => {
     res.status(200).json({ message: 'welcome home (sanitarium)' })
@@ -37,6 +37,38 @@ router.get('/', (req, res) => {
         res.render('recent', { posts, logged_in: req.session.loggedIn })
     })
     .catch(err => console.error(err))
+});
+router.get('/dashboard', withAuth, (req, res) => {
+    const userId = req.session.userId;
+    console.log(`USER ID: ${userId}`)
+    Post
+        .findAll({ 
+            where: { userId: userId },
+            include: [
+                {
+                    model: User,
+                    attributes: ['userName']
+                },
+                {
+                    model: Comment,
+                    attributes: ['id', 'body'],
+                    include: [
+                        {
+                            model: User,
+                            attributes: ['userName']
+                        }
+                    ]
+                }
+            ],
+            order: [
+                ['createdAt', 'DESC']
+            ]
+        })
+        .then((postData) => {
+            const posts = postData.map(post => post.get({ plain: true }));
+            res.render('dashboard', { posts, logged_in: req.session.loggedIn });
+        })
+        .catch(err => res.send(`Looks like there's an issue with the database`));
 });
 router.get('/signup', (req,res) => {
     res.render('signup')

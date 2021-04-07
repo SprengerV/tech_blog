@@ -62,8 +62,24 @@ header {
     color: darkgray;
     font-variant: small-caps;
 }
+.dashHead {
+    margin: .7rem auto 0 auto;
+    font-variant: small-caps;
+    color: darkslategray;
+}
 .date {
     font-size: 10px;
+}
+.delEdit {
+    margin: 0 auto 0 auto;
+    width: 70vw;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.editBtn, .delBtn{
+    text-decoration: none;
+    color: darkslategray;
+    margin: 0 5px 0 5px;
 }
 .form-row {
     display: flex;
