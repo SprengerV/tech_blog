@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
             console.log(`User "${req.body.userName}" registered`);
             req.session.save(() => {
                 req.session.userId = userData.id;
-                req.session.loggedIn = true
+                req.session.loggedIn = true;
                 res
                     .status(200)
                     .json({ user: userData, message: 'You are now logged in'});

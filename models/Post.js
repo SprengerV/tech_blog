@@ -28,11 +28,8 @@ Post.init(
             }
         },
         body: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [8, 255]
-            }
+            type: DataTypes.TEXT,
+            allowNull: false
         },
         createdAt: {
             type: Sequelize.DATE,
