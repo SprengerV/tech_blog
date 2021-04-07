@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Blog</title>
+    <title>techl0rd Tech Blog</title>
+    {{!-- favicon --}}
+    <link rel="icon" type="image/png" href="/img/favicon.png"/>
+    {{!-- custom styles --}}
     <link rel="stylesheet" href="/css/style.css">
     {{!-- google fonts --}}
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -24,7 +27,7 @@
                 <a href="/" class="nav-link">Home</a><span class="zero"> | </span>
                 {{#if logged_in}}
                 <a href="/dashboard" class="nav-link">Dashboard</a><span class="zero"> | </span>
-                <a id="logout" class="nav-link">Logout</a>
+                <a href="/login" id="logout" class="nav-link">Logout</a>
                 {{else}}
                 <a href="/signup" class="nav-link">Sign Up</a><span class="zero"> | </span>
                 <a href="/login" class="nav-link">Log In</a>

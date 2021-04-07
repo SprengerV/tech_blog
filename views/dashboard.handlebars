@@ -1,15 +1,13 @@
-<article>
-    <h2 class="dashHead">Your Posts</h2>
+<article id="dashHead">
+    <h2 id="dashHeadText">Your Posts</h2>
 </article>
 
 {{#each posts as |post|}}    
-    <article>
-        {{>truncPost post}}
-    </article>
-    <div class="delEdit">
-        <a href="" data-postId="{{{post.id}}}" class="delBtn">DELETE</a>
-        <a href="/post/edit/{{{post.id}}}" data-postId="{{{post.id}}}" class="editBtn">EDIT</a>
-    </div>
+{{>truncPost post}}
+<div class="delEdit">
+    <a href="" data-postId="{{{post.id}}}" class="delBtn">DELETE</a>
+    <a href="/post/edit/{{{post.id}}}" data-postId="{{{post.id}}}" class="editBtn">EDIT</a>
+</div>
 {{/each}}
 
 <script src="/js/post.js"></script>

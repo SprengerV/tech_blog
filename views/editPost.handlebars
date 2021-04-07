@@ -1,14 +1,8 @@
-<div id="editBox">
-    <form type="submit" id="editForm" data-postId="{{{post.id}}}">
-        <div class="formRow">
-            <input type="text" id="editTitle" value="{{{post.title}}}">
-        </div>
-        <div class="formRow">
-            <textarea type="text" id="editBody" value="">{{{post.body}}}</textarea>
-        </div>
-        <div class="formRow">
-            <button id="editPost" type="submit">Edit Post</button>
-        </div>
+<div id="editPostBox">
+    <form type="submit" id="editPostForm" data-postId="{{{post.id}}}">
+        <input type="text" id="editPostTitle" value="{{{post.title}}}">
+        <textarea type="text" id="editPostBody" value="">{{{post.body}}}</textarea>
+        <button id="editPostBtn" type="submit">Edit Post</button>
     </form>
 </div>
 

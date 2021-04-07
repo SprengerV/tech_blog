@@ -1,14 +1,9 @@
-<form type="submit" id="addPost">
-    <div class="form-row">
-        <label for="postTitle">Title</label>
-        <input type="text" name="postTitle" id="postTitle">
-    </div>
-    <div class="form-row">
-        <input type="text" id="postBody">
-    </div>
-    <div class="form-row">
-        <button id="submitPost" type="submit">Submit</button>
-    </div>
-</form>
+<div id="addPostBox">
+    <form  id="addPostForm" type="submit">
+        <textarea id="addPostTitle" type="text" placeholder="Title:"></textarea>
+        <textarea id="addPostBody" placeholder="Write your post here..."></textarea>
+        <button id="addPostBtn" type="submit">Add Post</button>
+    </form>
+</div>
 
 <script src="/js/post.js"></script>

@@ -1,7 +1,7 @@
-const newComment = async (event) => {
+const addComment = async (event) => {
     event.preventDefault();
-    const postId = $('#addComment').attr('data-postId');
-    const body = $('#newComment').val();
+    const postId = $('#addCommentForm').attr('data-postId');
+    const body = $('#addCommentBody').val();
     const res = await fetch('/api/comment/add', {
         method: 'POST',
         body: JSON.stringify({ postId, body }),
@@ -11,5 +11,5 @@ const newComment = async (event) => {
 }
 
 $(document).ready(() => {
-    $('#addComment').submit(newComment);
+    $('#addCommentForm').submit(addComment);
 })

@@ -1,7 +1,7 @@
-const makePost = async (event) => {
+async function addPost(event) {
     event.preventDefault();
-    const newTitle = $('#postTitle').val();
-    const newBody = $('#postBody').val();
+    const newTitle = $('#addPostTitle').val();
+    const newBody = $('#addPostBody').val();
     const res = await fetch('/api/post/add', {
         method: 'POST',
         body: JSON.stringify({
@@ -22,11 +22,11 @@ async function delPost(event) {
     })
     res.ok ? document.location.replace('/dashboard') : alert('Failed to delete post');
 }
-const editPost = async (event) => {
+async function editPost(event) {
     event.preventDefault();
-    const postId = $('#editForm').attr('data-postId');
-    const title = $('#editTitle').val();
-    const body = $('#editBody').val();
+    const postId = $('#editPostForm').attr('data-postId');
+    const title = $('#editPostTitle').val();
+    const body = $('#editPostBody').val();
     const res = await fetch(`/api/post/edit/${postId}`, {
         method: 'PUT',
         body: JSON.stringify({
@@ -35,12 +35,12 @@ const editPost = async (event) => {
             body
         }),
         headers: { 'Content-Type': 'application/json'}
-    })
+    });
     res.ok ? document.location.replace('/dashboard') : alert('Failed to edit post');
 }
 
 $(document).ready(() => {
-    $('#addPost').submit(makePost);
+    $('#addPostForm').submit(addPost);
     $('.delBtn').on('click', delPost);
-    $('#editForm').submit(editPost);
+    $('#editPostForm').submit(editPost);
 })
