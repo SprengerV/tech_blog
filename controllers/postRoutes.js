@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const withAuth = require('../utils/auth.js');
+const { loggedIn } = require('../utils/auth.js');
 const { User, Post, Comment } = require('../models');
 
 // routes for /post
-router.get('/add', withAuth, (req, res) => {
+router.get('/add', loggedIn, (req, res) => {
     res.render('addPost', { logged_in: req.session.loggedIn })
 });
-router.get('/:id', withAuth, (req, res) => {
+router.get('/:id', loggedIn, (req, res) => {
     Post
         .findByPk(req.params.id,
             {
