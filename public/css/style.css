@@ -40,7 +40,7 @@ header {
     padding: .5rem .5rem .5rem 0px
 }
 .author {
-
+    font-weight: bold;
 }
 .commentBar {
     width: 70vw;
@@ -60,7 +60,8 @@ header {
     margin-right: auto;
     text-decoration: none;
     color: darkgray;
-    font-variant: small-caps;
+    font-family: 'Orbitron', sans-serif;
+    font-variant: small-caps
 }
 .dashHead {
     margin: .7rem auto 0 auto;
@@ -69,6 +70,7 @@ header {
 }
 .date {
     font-size: 10px;
+    color: darkkhaki;
 }
 .delEdit {
     margin: 0 auto 0 auto;
@@ -95,6 +97,7 @@ header {
 .navbar-brand {
     font-size: 40px;
     margin: .5rem;
+    font-family: 'Orbitron', sans-serif;
 }
 .nav-link {
     text-decoration: none;
@@ -129,9 +132,6 @@ header {
     margin-left: auto;
     margin-right: auto;
 }
-.sign-header {
-
-}
 .sign-title {
     padding: 1rem 0 1rem 0;
     margin: 0;
@@ -149,6 +149,9 @@ header {
     overflow: hidden !important;
     text-overflow: ellipsis;
     -webkit-line-clamp: 4;
+}
+.zero {
+    color: darkkhaki;
 }
 #addComment {
     display: flex;
@@ -226,6 +229,7 @@ header {
     align-items: center;
     text-decoration: solid;
     color: darkgray;
+    font-family: 'Orbitron', sans-serif;
     font-variant: small-caps;
 }
 #submitPost {
