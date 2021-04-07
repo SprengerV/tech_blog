@@ -4,8 +4,16 @@ const { User, Post, Comment } = require('../models');
 
 // routes for /post
 router.get('/add', loggedIn, (req, res) => {
-    res.render('addPost', { logged_in: req.session.loggedIn })
+    res.render('addPost', { logged_in: req.session.loggedIn });
 });
+router.get('/edit/:id', loggedIn, (req, res) => {
+    Post
+        .findByPk(req.params.id, { attributes: ['id', 'title', 'body'] })
+        .then(postData => {
+            const post = postData.get({ plain: true })
+            res.render('editPost', { post, logged_in: req.session.loggedIn });
+        });    
+})
 router.get('/:id', loggedIn, (req, res) => {
     Post
         .findByPk(req.params.id,

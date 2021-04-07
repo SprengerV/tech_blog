@@ -12,6 +12,6 @@
         "ecmaVersion": 12
     },
     "rules": {
-        "semicolon": "error"
+        "semi": [2, "always"]
     }
 }
