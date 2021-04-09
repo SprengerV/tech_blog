@@ -17,7 +17,7 @@ const hbs = exphbs.create({ helpers });
 // session handler
 const sess = {
     secret: 'urmum',
-    cookie: {},
+    cookie: { maxAge: 3600000 },
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
