@@ -21,10 +21,10 @@ Post.init(
             }
         }, 
         title: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
             validate: {
-                len: [1, 28]
+                len: [1, 64]
             }
         },
         body: {
