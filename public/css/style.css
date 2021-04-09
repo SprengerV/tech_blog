@@ -63,6 +63,21 @@ header {
     top: 12px;
     text-decoration: none;
 }
+.commentBody {
+    padding: 0px 20px 0px 20px;
+    margin-top: -10px;
+    line-height: 1.2rem;
+    font-size: 14px;
+}
+.commentBox {
+    margin: 10px auto 10px auto;
+    width: 70vw;
+    background-color: white;
+    border: 1px inset teal;
+}
+.commenter {
+    margin: 0px;
+}
 .commentCount {
     margin-left: auto;
     margin-right: auto;
@@ -71,7 +86,16 @@ header {
     font-family: 'Orbitron', sans-serif;
     font-variant: small-caps
 }
-
+.commentHeader {
+    margin: 0 auto 0 auto;
+    width: 68vw;
+    position: relative;
+    bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 .date {
     font-size: 10px;
     color: darkkhaki;

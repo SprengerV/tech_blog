@@ -30,10 +30,7 @@ Comment.init(
         },
         body: {
             type: DataTypes.TEXT,
-            allowNull: false,
-            validate: {
-                len: [1, 144]
-            }
+            allowNull: false
         },
         createdAt: {
             type: Sequelize.DATE,
