@@ -202,6 +202,21 @@ header {
     font-family: 'Orbitron', sans-serif;
     font-variant: small-caps;
 }
+#loginBtn {
+    grid-row: 6 / 7;
+}
+#loginForm {
+    margin: 0 auto 0 auto;
+    width: 67%;
+    display: grid;
+    grid-template-rows: 2fr 1fr 2fr 1fr 2fr 1fr 4fr;
+}
+#loginPassword {
+    grid-row: 4 / 5;
+}
+#loginUsername {
+    grid-row: 2 / 3;
+}
 #newPostArea {
     width: 70vw;
     height: 1.3ex;
