@@ -1,10 +1,22 @@
 const signUpFormHandler = async (event) => {
     try {
         event.preventDefault();
-        const username = document.querySelector('#username').value.trim();
-        const password = document.querySelector('#password').value.trim();
-        console.log(`username: ${username} password: ${password}`)
-        if (username && password) {
+        const username = $('#username').val();
+        const password = $('#password').val();
+        const passwordConfirm = $('#passwordConfirm').val();
+        if (!username) {
+            alert('Please enter a username');
+            return
+        }
+        if (!password) {
+            alert('Please enter a password');
+            return
+        }
+        if (!passwordConfirm) {
+            alert('Please confirm your password');
+            return
+        }
+        if (password === passwordConfirm) {
             const response = await fetch('/api/auth/', {
                 method: 'POST',
                 body: JSON.stringify({
@@ -16,8 +28,12 @@ const signUpFormHandler = async (event) => {
             if (response.ok) {
                 document.location.replace('/');
             } else {
-                alert('Failed to create user');
+                alert('User name already taken');
+                return
             }
+        } else {
+            alert('Password confirmation does not match');
+            return
         }
     } catch (err) {
         alert(err);
@@ -25,5 +41,5 @@ const signUpFormHandler = async (event) => {
 };
 
 document
-    .querySelector('#signup')
+    .querySelector('#signupForm')
     .addEventListener('submit', signUpFormHandler)

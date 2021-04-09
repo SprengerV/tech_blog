@@ -1,20 +1,13 @@
-<div class="sign-box">
-    <header class="sign-header">
-        <h1 class="sign-title">Sign Up</h1>
+<div id="signupBox">
+    <header>
+        <h1 id="signupTitle">Sign Up</h1>
     </header>
-    <div class="sign-body">
-        <form id="signup" class="sign-form">
-            <div class="form-row">
-                <label for="username">User Name:</label>
-                <input type="text" id="username" name="username" placeholder="16 characters max">
-            </div>
-            <div class="form-row">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="8-24 characters">
-            </div>
-            <div class="form-row">
-                <button type="submit" action="">Register</button>
-            </div>
+    <div id="signupBody">
+        <form id="signupForm">
+            <input type="text" id="username" placeholder="Enter username..."/>
+            <input type="password" id="password" placeholder="Enter password..."/>
+            <input type="password" id="passwordConfirm" placeholder="Confirm password..."/>
+            <button type="submit" id="signupBtn">Register</button>
         </form>
     </div>
 </div>

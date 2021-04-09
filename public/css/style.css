@@ -131,37 +131,6 @@ header {
 .newPostBtn {
     text-decoration: none;
 }
-.sign-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.sign-box {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10vh;
-    width: 50vw;
-    height: 65vh;
-    background-color: white;
-    border-color: teal;
-    border-width: 2px;
-    border-style: inset;
-}
-.sign-form {
-    display: flex;
-    flex-direction: column;
-    width: 62%;
-    height: 400px;
-    justify-content: space-evenly;
-    margin-left: auto;
-    margin-right: auto;
-}
-.sign-title {
-    padding: 1rem 0 1rem 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
 .truncArticleBody {
     padding: 0px 10px 0px 10px;
     overflow:hidden;
@@ -260,4 +229,46 @@ header {
     color: darkgray;
     font-family: 'Orbitron', sans-serif;
     font-variant: small-caps;
+}
+#password {
+    grid-row: 3 / 4;
+}
+#passwordConfirm {
+    grid-row: 5 / 6;
+}
+#signupBody {
+    width: 45vw;
+    margin: 5vh auto 5vh auto;
+}
+#signupBtn {
+    grid-row: 7 / 8;
+}
+#signupBox {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    width: 50vw;
+    height: 50vh;
+    background-color: white;
+    border-color: teal;
+    border-width: 2px;
+    border-style: inset;
+}
+#signupForm {
+    margin: 0 auto 0 auto;
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr 2fr 1fr 3fr 1fr;
+    width: 67%;
+}
+#signupTitle {
+    padding: 1rem 0 1rem 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-variant: small-caps
+}
+#username {
+    grid-row: 1 / 2;
 }
